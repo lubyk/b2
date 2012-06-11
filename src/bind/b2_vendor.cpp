@@ -16,9 +16,11 @@
 #include "Box2D/Dynamics/b2ContactManager.h"
 #include "Box2D/Collision/b2Distance.h"
 #include "Box2D/Common/b2Draw.h"
+#include "b2Drawer.h"
 #include "Box2D/Collision/b2DynamicTree.h"
 #include "Box2D/Collision/Shapes/b2EdgeShape.h"
 #include "Box2D/Dynamics/b2Fixture.h"
+#include "b2GLDrawer.h"
 #include "Box2D/Dynamics/b2Island.h"
 #include "Box2D/Common/b2Math.h"
 #include "Box2D/Collision/Shapes/b2PolygonShape.h"
@@ -57,12 +59,14 @@ int luaopen_b2_DistanceInput(lua_State *L);
 int luaopen_b2_DistanceOutput(lua_State *L);
 int luaopen_b2_Color(lua_State *L);
 int luaopen_b2_Draw(lua_State *L);
+int luaopen_b2_Drawer(lua_State *L);
 int luaopen_b2_DynamicTree(lua_State *L);
 int luaopen_b2_EdgeShape(lua_State *L);
 int luaopen_b2_Filter(lua_State *L);
 int luaopen_b2_FixtureDef(lua_State *L);
 int luaopen_b2_FixtureProxy(lua_State *L);
 int luaopen_b2_Fixture(lua_State *L);
+int luaopen_b2_GLDrawer(lua_State *L);
 int luaopen_b2_Island(lua_State *L);
 int luaopen_b2_Vec2(lua_State *L);
 int luaopen_b2_Vec3(lua_State *L);
@@ -829,12 +833,14 @@ extern "C" int luaopen_b2_vendor(lua_State *L) {
   luaopen_b2_DistanceOutput(L);
   luaopen_b2_Color(L);
   luaopen_b2_Draw(L);
+  luaopen_b2_Drawer(L);
   luaopen_b2_DynamicTree(L);
   luaopen_b2_EdgeShape(L);
   luaopen_b2_Filter(L);
   luaopen_b2_FixtureDef(L);
   luaopen_b2_FixtureProxy(L);
   luaopen_b2_Fixture(L);
+  luaopen_b2_GLDrawer(L);
   luaopen_b2_Island(L);
   luaopen_b2_Vec2(L);
   luaopen_b2_Vec3(L);

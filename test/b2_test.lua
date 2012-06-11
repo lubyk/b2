@@ -83,4 +83,44 @@ function should.runHelloWorld()
   -- create orphaned pointers, so be careful about your world management.
 end
 
+function should.callDrawer()
+  -- Define the gravity vector.
+  local gravity = b2.Vec2(0.0, -10.0)
+
+  -- Construct a world object, which will hold and simulate the rigid bodies.
+  local world = b2.World(gravity)
+
+  -- Define the ground body.
+  local groundBodyDef = b2.BodyDef()
+  groundBodyDef.position:Set(0.0, -10.0)
+  -- Call the body factory which allocates memory for the ground body
+  -- from a pool and creates the ground box shape (also from a pool).
+  -- The body is also added to the world.
+  local groundBody = world:CreateBody(groundBodyDef)
+
+  -- Define the ground box shape.
+  local groundBox = b2.PolygonShape()
+  -- The extents are the half-widths of the box.
+  groundBox:SetAsBox(50.0, 10.0)
+
+  -- Add the ground fixture to the ground body.
+  groundBody:CreateFixture(groundBox, 0.0)
+  
+  local called = false
+  -- Create drawing engine
+  local drawer = b2.Drawer()
+	world:SetDebugDraw(drawer)
+	drawer:SetFlags(bit.bor(b2.Draw.e_shapeBit, b2.Draw.e_jointBit))
+  
+  
+  function drawer:DrawSolidPolygon()
+    called = true
+  end
+
+  world:Step(1/60, 6, 2)
+
+	world:DrawDebugData()
+  assertTrue(called)
+end
+
 test.all()

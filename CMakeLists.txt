@@ -33,8 +33,9 @@ add_subdirectory(vendor/Box2D)
 # --------------------------------------------------------------
 set(target "${MODULE_NAME}_vendor")
 
-file(GLOB MODULE_SOURCES src/*.cpp src/dub/*.cpp)
-include_directories(src)
+file(GLOB MODULE_SOURCES src/*.cpp src/bind/*.cpp src/bind/dub/*.cpp)
+include_directories(include)
+include_directories(src/bind)
 include_directories(vendor/Box2D)
 
 add_library(${target} MODULE ${MODULE_SOURCES})
