@@ -317,7 +317,7 @@ static int b2Island_Add(lua_State *L) {
       self->Add(body);
       return 0;
     } else {
-      b2Joint *joint = *((b2Joint **)dub_checksdata(L, 2, "Joint"));
+      b2Joint *joint = *((b2Joint **)dub_checksdata(L, 2, "b2.Joint"));
       self->Add(joint);
       return 0;
     }

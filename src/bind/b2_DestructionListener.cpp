@@ -38,13 +38,13 @@ static int b2DestructionListener_SayGoodbye(lua_State *L) {
     b2DestructionListener *self = *((b2DestructionListener **)dub_checksdata(L, 1, "b2.DestructionListener"));
     int type__ = lua_type(L, 2);
     void **ptr2__;
-    if ( (ptr2__ = dub_issdata(L, 2, "Joint", type__)) ) {
-      b2Joint *joint = *((b2Joint **)ptr2__);
-      self->SayGoodbye(joint);
+    if ( (ptr2__ = dub_issdata(L, 2, "b2.Fixture", type__)) ) {
+      b2Fixture *fixture = *((b2Fixture **)ptr2__);
+      self->SayGoodbye(fixture);
       return 0;
     } else {
-      b2Fixture *fixture = *((b2Fixture **)dub_checksdata(L, 2, "b2.Fixture"));
-      self->SayGoodbye(fixture);
+      b2Joint *joint = *((b2Joint **)dub_checksdata(L, 2, "b2.Joint"));
+      self->SayGoodbye(joint);
       return 0;
     }
   } catch (std::exception &e) {

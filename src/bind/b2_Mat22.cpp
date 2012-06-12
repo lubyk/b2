@@ -94,7 +94,7 @@ static int b2Mat22__get_(lua_State *L) {
 }
 
 /** b2Mat22::b2Mat22()
- * vendor/Box2D/Box2D/Common/b2Math.h:197
+ * vendor/Box2D/Box2D/Common/b2Math.h:214
  */
 static int b2Mat22_b2Mat22(lua_State *L) {
   try {
@@ -127,7 +127,7 @@ static int b2Mat22_b2Mat22(lua_State *L) {
 }
 
 /** void b2Mat22::Set(const b2Vec2 &c1, const b2Vec2 &c2)
- * vendor/Box2D/Box2D/Common/b2Math.h:215
+ * vendor/Box2D/Box2D/Common/b2Math.h:232
  */
 static int b2Mat22_Set(lua_State *L) {
   try {
@@ -145,7 +145,7 @@ static int b2Mat22_Set(lua_State *L) {
 }
 
 /** void b2Mat22::SetIdentity()
- * vendor/Box2D/Box2D/Common/b2Math.h:222
+ * vendor/Box2D/Box2D/Common/b2Math.h:239
  */
 static int b2Mat22_SetIdentity(lua_State *L) {
   try {
@@ -161,7 +161,7 @@ static int b2Mat22_SetIdentity(lua_State *L) {
 }
 
 /** void b2Mat22::SetZero()
- * vendor/Box2D/Box2D/Common/b2Math.h:229
+ * vendor/Box2D/Box2D/Common/b2Math.h:246
  */
 static int b2Mat22_SetZero(lua_State *L) {
   try {
@@ -177,7 +177,7 @@ static int b2Mat22_SetZero(lua_State *L) {
 }
 
 /** b2Mat22 b2Mat22::GetInverse() const
- * vendor/Box2D/Box2D/Common/b2Math.h:235
+ * vendor/Box2D/Box2D/Common/b2Math.h:252
  */
 static int b2Mat22_GetInverse(lua_State *L) {
   try {
@@ -193,7 +193,7 @@ static int b2Mat22_GetInverse(lua_State *L) {
 }
 
 /** b2Vec2 b2Mat22::Solve(const b2Vec2 &b) const
- * vendor/Box2D/Box2D/Common/b2Math.h:251
+ * vendor/Box2D/Box2D/Common/b2Math.h:268
  */
 static int b2Mat22_Solve(lua_State *L) {
   try {

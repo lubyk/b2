@@ -814,7 +814,7 @@ static int b2Body_GetJointList(lua_State *L) {
     b2Body *self = *((b2Body **)dub_checksdata(L, 1, "b2.Body"));
     b2JointEdge *retval__ = self->GetJointList();
     if (!retval__) return 0;
-    dub_pushudata(L, retval__, "JointEdge", false);
+    dub_pushudata(L, retval__, "b2.JointEdge", false);
     return 1;
   } catch (std::exception &e) {
     lua_pushfstring(L, "GetJointList: %s", e.what());

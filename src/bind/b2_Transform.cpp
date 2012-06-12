@@ -94,7 +94,7 @@ static int b2Transform__get_(lua_State *L) {
 }
 
 /** b2Transform::b2Transform()
- * vendor/Box2D/Box2D/Common/b2Math.h:364
+ * vendor/Box2D/Box2D/Common/b2Math.h:381
  */
 static int b2Transform_b2Transform(lua_State *L) {
   try {
@@ -119,7 +119,7 @@ static int b2Transform_b2Transform(lua_State *L) {
 }
 
 /** void b2Transform::SetIdentity()
- * vendor/Box2D/Box2D/Common/b2Math.h:371
+ * vendor/Box2D/Box2D/Common/b2Math.h:388
  */
 static int b2Transform_SetIdentity(lua_State *L) {
   try {
@@ -135,7 +135,7 @@ static int b2Transform_SetIdentity(lua_State *L) {
 }
 
 /** void b2Transform::Set(const b2Vec2 &position, float32 angle)
- * vendor/Box2D/Box2D/Common/b2Math.h:378
+ * vendor/Box2D/Box2D/Common/b2Math.h:395
  */
 static int b2Transform_Set(lua_State *L) {
   try {

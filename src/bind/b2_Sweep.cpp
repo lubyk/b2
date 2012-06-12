@@ -130,7 +130,7 @@ static int b2Sweep_b2Sweep(lua_State *L) {
 }
 
 /** void b2Sweep::GetTransform(b2Transform *xfb, float32 beta) const
- * vendor/Box2D/Box2D/Common/b2Math.h:395
+ * vendor/Box2D/Box2D/Common/b2Math.h:412
  */
 static int b2Sweep_GetTransform(lua_State *L) {
   try {
@@ -148,7 +148,7 @@ static int b2Sweep_GetTransform(lua_State *L) {
 }
 
 /** void b2Sweep::Advance(float32 alpha)
- * vendor/Box2D/Box2D/Common/b2Math.h:399
+ * vendor/Box2D/Box2D/Common/b2Math.h:416
  */
 static int b2Sweep_Advance(lua_State *L) {
   try {
@@ -165,7 +165,7 @@ static int b2Sweep_Advance(lua_State *L) {
 }
 
 /** void b2Sweep::Normalize()
- * vendor/Box2D/Box2D/Common/b2Math.h:402
+ * vendor/Box2D/Box2D/Common/b2Math.h:419
  */
 static int b2Sweep_Normalize(lua_State *L) {
   try {

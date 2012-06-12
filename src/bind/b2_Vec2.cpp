@@ -185,8 +185,59 @@ static int b2Vec2_operator_call(lua_State *L) {
   return dub_error(L);
 }
 
-/** void b2Vec2::operator+=(const b2Vec2 &v)
+/** b2Vec2 b2Vec2::operator+(const b2Vec2 &b) const
  * vendor/Box2D/Box2D/Common/b2Math.h:95
+ */
+static int b2Vec2_operator_add(lua_State *L) {
+  try {
+    b2Vec2 *self = *((b2Vec2 **)dub_checksdata(L, 1, "b2.Vec2"));
+    b2Vec2 *b = *((b2Vec2 **)dub_checksdata(L, 2, "b2.Vec2"));
+    dub_pushudata(L, new b2Vec2(self->operator+(*b)), "b2.Vec2", true);
+    return 1;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "operator+: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "operator+: Unknown exception");
+  }
+  return dub_error(L);
+}
+
+/** b2Vec2 b2Vec2::operator-(const b2Vec2 &b) const
+ * vendor/Box2D/Box2D/Common/b2Math.h:101
+ */
+static int b2Vec2_operator_sub(lua_State *L) {
+  try {
+    b2Vec2 *self = *((b2Vec2 **)dub_checksdata(L, 1, "b2.Vec2"));
+    b2Vec2 *b = *((b2Vec2 **)dub_checksdata(L, 2, "b2.Vec2"));
+    dub_pushudata(L, new b2Vec2(self->operator-(*b)), "b2.Vec2", true);
+    return 1;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "operator-: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "operator-: Unknown exception");
+  }
+  return dub_error(L);
+}
+
+/** b2Vec2 b2Vec2::operator*(float32 s) const
+ * vendor/Box2D/Box2D/Common/b2Math.h:106
+ */
+static int b2Vec2_operator_mul(lua_State *L) {
+  try {
+    b2Vec2 *self = *((b2Vec2 **)dub_checksdata(L, 1, "b2.Vec2"));
+    float32 s = dub_checknumber(L, 2);
+    dub_pushudata(L, new b2Vec2(self->operator*(s)), "b2.Vec2", true);
+    return 1;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "operator*: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "operator*: Unknown exception");
+  }
+  return dub_error(L);
+}
+
+/** void b2Vec2::operator+=(const b2Vec2 &v)
+ * vendor/Box2D/Box2D/Common/b2Math.h:112
  */
 static int b2Vec2_operator_adde(lua_State *L) {
   try {
@@ -203,7 +254,7 @@ static int b2Vec2_operator_adde(lua_State *L) {
 }
 
 /** void b2Vec2::operator-=(const b2Vec2 &v)
- * vendor/Box2D/Box2D/Common/b2Math.h:101
+ * vendor/Box2D/Box2D/Common/b2Math.h:118
  */
 static int b2Vec2_operator_sube(lua_State *L) {
   try {
@@ -220,7 +271,7 @@ static int b2Vec2_operator_sube(lua_State *L) {
 }
 
 /** void b2Vec2::operator*=(float32 a)
- * vendor/Box2D/Box2D/Common/b2Math.h:107
+ * vendor/Box2D/Box2D/Common/b2Math.h:124
  */
 static int b2Vec2_operator_mule(lua_State *L) {
   try {
@@ -237,7 +288,7 @@ static int b2Vec2_operator_mule(lua_State *L) {
 }
 
 /** float32 b2Vec2::Length() const
- * vendor/Box2D/Box2D/Common/b2Math.h:113
+ * vendor/Box2D/Box2D/Common/b2Math.h:130
  */
 static int b2Vec2_Length(lua_State *L) {
   try {
@@ -253,7 +304,7 @@ static int b2Vec2_Length(lua_State *L) {
 }
 
 /** float32 b2Vec2::LengthSquared() const
- * vendor/Box2D/Box2D/Common/b2Math.h:120
+ * vendor/Box2D/Box2D/Common/b2Math.h:137
  */
 static int b2Vec2_LengthSquared(lua_State *L) {
   try {
@@ -269,7 +320,7 @@ static int b2Vec2_LengthSquared(lua_State *L) {
 }
 
 /** float32 b2Vec2::Normalize()
- * vendor/Box2D/Box2D/Common/b2Math.h:126
+ * vendor/Box2D/Box2D/Common/b2Math.h:143
  */
 static int b2Vec2_Normalize(lua_State *L) {
   try {
@@ -285,7 +336,7 @@ static int b2Vec2_Normalize(lua_State *L) {
 }
 
 /** bool b2Vec2::IsValid() const
- * vendor/Box2D/Box2D/Common/b2Math.h:141
+ * vendor/Box2D/Box2D/Common/b2Math.h:158
  */
 static int b2Vec2_IsValid(lua_State *L) {
   try {
@@ -301,7 +352,7 @@ static int b2Vec2_IsValid(lua_State *L) {
 }
 
 /** b2Vec2 b2Vec2::Skew() const
- * vendor/Box2D/Box2D/Common/b2Math.h:147
+ * vendor/Box2D/Box2D/Common/b2Math.h:164
  */
 static int b2Vec2_Skew(lua_State *L) {
   try {
@@ -337,6 +388,9 @@ static const struct luaL_Reg b2Vec2_member_methods[] = {
   { "Set"          , b2Vec2_Set           },
   { "__unm"        , b2Vec2_operator_unm  },
   { "__call"       , b2Vec2_operator_call },
+  { "__add"        , b2Vec2_operator_add  },
+  { "__sub"        , b2Vec2_operator_sub  },
+  { "__mul"        , b2Vec2_operator_mul  },
   { "add"          , b2Vec2_operator_adde },
   { "sub"          , b2Vec2_operator_sube },
   { "mul"          , b2Vec2_operator_mule },

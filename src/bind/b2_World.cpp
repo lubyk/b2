@@ -157,10 +157,10 @@ static int b2World_DestroyBody(lua_State *L) {
 static int b2World_CreateJoint(lua_State *L) {
   try {
     b2World *self = *((b2World **)dub_checksdata(L, 1, "b2.World"));
-    b2JointDef *def = *((b2JointDef **)dub_checksdata(L, 2, "JointDef"));
+    b2JointDef *def = *((b2JointDef **)dub_checksdata(L, 2, "b2.JointDef"));
     b2Joint *retval__ = self->CreateJoint(def);
     if (!retval__) return 0;
-    dub_pushudata(L, retval__, "Joint", false);
+    dub_pushudata(L, retval__, "b2.Joint", false);
     return 1;
   } catch (std::exception &e) {
     lua_pushfstring(L, "CreateJoint: %s", e.what());
@@ -176,7 +176,7 @@ static int b2World_CreateJoint(lua_State *L) {
 static int b2World_DestroyJoint(lua_State *L) {
   try {
     b2World *self = *((b2World **)dub_checksdata(L, 1, "b2.World"));
-    b2Joint *joint = *((b2Joint **)dub_checksdata(L, 2, "Joint"));
+    b2Joint *joint = *((b2Joint **)dub_checksdata(L, 2, "b2.Joint"));
     self->DestroyJoint(joint);
     return 0;
   } catch (std::exception &e) {
@@ -301,7 +301,7 @@ static int b2World_GetJointList(lua_State *L) {
     b2World *self = *((b2World **)dub_checksdata(L, 1, "b2.World"));
     b2Joint *retval__ = self->GetJointList();
     if (!retval__) return 0;
-    dub_pushudata(L, retval__, "Joint", false);
+    dub_pushudata(L, retval__, "b2.Joint", false);
     return 1;
   } catch (std::exception &e) {
     lua_pushfstring(L, "GetJointList: %s", e.what());

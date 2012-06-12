@@ -10,26 +10,6 @@
 #include "b2Drawer.h"
 
 
-/** ~b2Drawer()
- * 
- */
-static int b2Drawer__b2Drawer(lua_State *L) {
-  try {
-    DubUserdata *userdata = ((DubUserdata*)dub_checksdata_d(L, 1, "b2.Drawer"));
-    if (userdata->gc) {
-      b2Drawer *self = (b2Drawer *)userdata->ptr;
-      delete self;
-    }
-    userdata->gc = false;
-    return 0;
-  } catch (std::exception &e) {
-    lua_pushfstring(L, "~b2Drawer: %s", e.what());
-  } catch (...) {
-    lua_pushfstring(L, "~b2Drawer: Unknown exception");
-  }
-  return dub_error(L);
-}
-
 /** Cast (class_name)
  * 
  */
@@ -49,8 +29,8 @@ static int b2Drawer__cast_(lua_State *L) {
   return 0;
 }
 
-/** b2Drawer::b2Drawer()
- * include/b2Drawer.h:41
+/** b2Drawer()
+ * 
  */
 static int b2Drawer_b2Drawer(lua_State *L) {
   try {
@@ -145,7 +125,6 @@ static int b2Drawer___tostring(lua_State *L) {
 // --=============================================== METHODS
 
 static const struct luaL_Reg b2Drawer_member_methods[] = {
-  { "__gc"         , b2Drawer__b2Drawer   },
   { "_cast_"       , b2Drawer__cast_      },
   { "new"          , b2Drawer_b2Drawer    },
   { "SetFlags"     , b2Drawer_SetFlags    },

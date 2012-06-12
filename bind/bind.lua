@@ -22,9 +22,13 @@ local ins = dub.Inspector {
     b2_base .. '/Box2D/Collision',
     b2_base .. '/Box2D/Collision/Shapes',
     b2_base .. '/Box2D/Dynamics',
+    -- A bug in dub prevents this from working
+    --b2_base .. '/Box2D/Dynamics/Contacts',
+    b2_base .. '/Box2D/Dynamics/Joints',
     base    .. '/include',
   },
   ignore = {
+    -- FIXME: Why cannot dub ignore classes here ?
     b2Draw = {
       'DrawPolygon',
       'DrawSolidPolygon',
@@ -57,6 +61,9 @@ binder:bind(ins, {
   custom_bindings  = base .. '/bind',
   ignore = {
     'b2TreeNode',
+    -- Incomplete implementation
+    'b2WheelJoint',
+    'b2WheelJointDef',
   },
   -- Remove this part in headers
   -- LuaBinder 115

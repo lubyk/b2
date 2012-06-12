@@ -104,7 +104,7 @@ static int b2Vec3__get_(lua_State *L) {
 }
 
 /** b2Vec3::b2Vec3()
- * vendor/Box2D/Box2D/Common/b2Math.h:158
+ * vendor/Box2D/Box2D/Common/b2Math.h:175
  */
 static int b2Vec3_b2Vec3(lua_State *L) {
   try {
@@ -130,7 +130,7 @@ static int b2Vec3_b2Vec3(lua_State *L) {
 }
 
 /** void b2Vec3::SetZero()
- * vendor/Box2D/Box2D/Common/b2Math.h:164
+ * vendor/Box2D/Box2D/Common/b2Math.h:181
  */
 static int b2Vec3_SetZero(lua_State *L) {
   try {
@@ -146,7 +146,7 @@ static int b2Vec3_SetZero(lua_State *L) {
 }
 
 /** void b2Vec3::Set(float32 x_, float32 y_, float32 z_)
- * vendor/Box2D/Box2D/Common/b2Math.h:167
+ * vendor/Box2D/Box2D/Common/b2Math.h:184
  */
 static int b2Vec3_Set(lua_State *L) {
   try {
@@ -165,7 +165,7 @@ static int b2Vec3_Set(lua_State *L) {
 }
 
 /** b2Vec3 b2Vec3::operator-() const
- * vendor/Box2D/Box2D/Common/b2Math.h:170
+ * vendor/Box2D/Box2D/Common/b2Math.h:187
  */
 static int b2Vec3_operator_unm(lua_State *L) {
   try {
@@ -181,7 +181,7 @@ static int b2Vec3_operator_unm(lua_State *L) {
 }
 
 /** void b2Vec3::operator+=(const b2Vec3 &v)
- * vendor/Box2D/Box2D/Common/b2Math.h:174
+ * vendor/Box2D/Box2D/Common/b2Math.h:191
  */
 static int b2Vec3_operator_adde(lua_State *L) {
   try {
@@ -198,7 +198,7 @@ static int b2Vec3_operator_adde(lua_State *L) {
 }
 
 /** void b2Vec3::operator-=(const b2Vec3 &v)
- * vendor/Box2D/Box2D/Common/b2Math.h:180
+ * vendor/Box2D/Box2D/Common/b2Math.h:197
  */
 static int b2Vec3_operator_sube(lua_State *L) {
   try {
@@ -215,7 +215,7 @@ static int b2Vec3_operator_sube(lua_State *L) {
 }
 
 /** void b2Vec3::operator*=(float32 s)
- * vendor/Box2D/Box2D/Common/b2Math.h:186
+ * vendor/Box2D/Box2D/Common/b2Math.h:203
  */
 static int b2Vec3_operator_mule(lua_State *L) {
   try {

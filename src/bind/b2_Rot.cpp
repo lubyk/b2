@@ -94,7 +94,7 @@ static int b2Rot__get_(lua_State *L) {
 }
 
 /** b2Rot::b2Rot()
- * vendor/Box2D/Box2D/Common/b2Math.h:312
+ * vendor/Box2D/Box2D/Common/b2Math.h:329
  */
 static int b2Rot_b2Rot(lua_State *L) {
   try {
@@ -118,7 +118,7 @@ static int b2Rot_b2Rot(lua_State *L) {
 }
 
 /** void b2Rot::Set(float32 angle)
- * vendor/Box2D/Box2D/Common/b2Math.h:324
+ * vendor/Box2D/Box2D/Common/b2Math.h:341
  */
 static int b2Rot_Set(lua_State *L) {
   try {
@@ -135,7 +135,7 @@ static int b2Rot_Set(lua_State *L) {
 }
 
 /** void b2Rot::SetIdentity()
- * vendor/Box2D/Box2D/Common/b2Math.h:332
+ * vendor/Box2D/Box2D/Common/b2Math.h:349
  */
 static int b2Rot_SetIdentity(lua_State *L) {
   try {
@@ -151,7 +151,7 @@ static int b2Rot_SetIdentity(lua_State *L) {
 }
 
 /** float32 b2Rot::GetAngle() const
- * vendor/Box2D/Box2D/Common/b2Math.h:339
+ * vendor/Box2D/Box2D/Common/b2Math.h:356
  */
 static int b2Rot_GetAngle(lua_State *L) {
   try {
@@ -167,7 +167,7 @@ static int b2Rot_GetAngle(lua_State *L) {
 }
 
 /** b2Vec2 b2Rot::GetXAxis() const
- * vendor/Box2D/Box2D/Common/b2Math.h:345
+ * vendor/Box2D/Box2D/Common/b2Math.h:362
  */
 static int b2Rot_GetXAxis(lua_State *L) {
   try {
@@ -183,7 +183,7 @@ static int b2Rot_GetXAxis(lua_State *L) {
 }
 
 /** b2Vec2 b2Rot::GetYAxis() const
- * vendor/Box2D/Box2D/Common/b2Math.h:351
+ * vendor/Box2D/Box2D/Common/b2Math.h:368
  */
 static int b2Rot_GetYAxis(lua_State *L) {
   try {

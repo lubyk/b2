@@ -104,7 +104,7 @@ static int b2Mat33__get_(lua_State *L) {
 }
 
 /** b2Mat33::b2Mat33()
- * vendor/Box2D/Box2D/Common/b2Math.h:271
+ * vendor/Box2D/Box2D/Common/b2Math.h:288
  */
 static int b2Mat33_b2Mat33(lua_State *L) {
   try {
@@ -130,7 +130,7 @@ static int b2Mat33_b2Mat33(lua_State *L) {
 }
 
 /** void b2Mat33::SetZero()
- * vendor/Box2D/Box2D/Common/b2Math.h:283
+ * vendor/Box2D/Box2D/Common/b2Math.h:300
  */
 static int b2Mat33_SetZero(lua_State *L) {
   try {
@@ -146,7 +146,7 @@ static int b2Mat33_SetZero(lua_State *L) {
 }
 
 /** b2Vec3 b2Mat33::Solve33(const b2Vec3 &b) const
- * vendor/Box2D/Box2D/Common/b2Math.h:291
+ * vendor/Box2D/Box2D/Common/b2Math.h:308
  */
 static int b2Mat33_Solve33(lua_State *L) {
   try {
@@ -163,7 +163,7 @@ static int b2Mat33_Solve33(lua_State *L) {
 }
 
 /** b2Vec2 b2Mat33::Solve22(const b2Vec2 &b) const
- * vendor/Box2D/Box2D/Common/b2Math.h:296
+ * vendor/Box2D/Box2D/Common/b2Math.h:313
  */
 static int b2Mat33_Solve22(lua_State *L) {
   try {
@@ -180,7 +180,7 @@ static int b2Mat33_Solve22(lua_State *L) {
 }
 
 /** void b2Mat33::GetInverse22(b2Mat33 *M) const
- * vendor/Box2D/Box2D/Common/b2Math.h:300
+ * vendor/Box2D/Box2D/Common/b2Math.h:317
  */
 static int b2Mat33_GetInverse22(lua_State *L) {
   try {
@@ -197,7 +197,7 @@ static int b2Mat33_GetInverse22(lua_State *L) {
 }
 
 /** void b2Mat33::GetSymInverse33(b2Mat33 *M) const
- * vendor/Box2D/Box2D/Common/b2Math.h:304
+ * vendor/Box2D/Box2D/Common/b2Math.h:321
  */
 static int b2Mat33_GetSymInverse33(lua_State *L) {
   try {
