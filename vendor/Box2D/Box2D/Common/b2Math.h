@@ -90,6 +90,23 @@ struct b2Vec2
 		return (&x)[i];
 	}
 
+  /// Add two vectors component-wise.
+  b2Vec2 operator + (const b2Vec2& b) const
+  {
+    return b2Vec2(x + b.x, y + b.y);
+  }
+
+  /// Subtract two vectors component-wise.
+  b2Vec2 operator - (const b2Vec2& b) const
+  {
+    return b2Vec2(x - b.x, y - b.y);
+  }
+
+  b2Vec2 operator * (float32 s) const
+  {
+    return b2Vec2(s * x, s * y);
+  }
+
 	/// Add a vector to this vector.
 	void operator += (const b2Vec2& v)
 	{
@@ -451,18 +468,6 @@ inline b2Vec2 b2Mul(const b2Mat22& A, const b2Vec2& v)
 inline b2Vec2 b2MulT(const b2Mat22& A, const b2Vec2& v)
 {
 	return b2Vec2(b2Dot(v, A.ex), b2Dot(v, A.ey));
-}
-
-/// Add two vectors component-wise.
-inline b2Vec2 operator + (const b2Vec2& a, const b2Vec2& b)
-{
-	return b2Vec2(a.x + b.x, a.y + b.y);
-}
-
-/// Subtract two vectors component-wise.
-inline b2Vec2 operator - (const b2Vec2& a, const b2Vec2& b)
-{
-	return b2Vec2(a.x - b.x, a.y - b.y);
 }
 
 inline b2Vec2 operator * (float32 s, const b2Vec2& a)
